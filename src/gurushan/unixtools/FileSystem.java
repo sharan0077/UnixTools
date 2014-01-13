@@ -21,4 +21,15 @@ public class FileSystem {
         }
         return text.substring(0,text.length()-1);
     }
+    public void writeFileContents(String FileName , String text)throws IOException {
+        try{
+            FileWriter fw = new FileWriter(FileName);
+            BufferedWriter bw = new BufferedWriter(fw);
+            bw.write(text);
+            bw.close();
+        }
+        catch(Exception e){
+            System.err.println(e);
+        }
+    }
 }
