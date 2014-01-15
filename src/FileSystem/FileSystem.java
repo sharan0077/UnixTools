@@ -1,4 +1,4 @@
-package gurushan.unixtools;
+package FileSystem;
 
 /**
  * Created by gurushan on 1/9/14.
@@ -6,7 +6,7 @@ package gurushan.unixtools;
 import java.io.*;
 
 public class FileSystem {
-    public String getFileContent(String FileName) throws IOException {
+    public String readFileContent(String FileName) throws IOException {
         String line , text = "";
         try{
             FileReader fr = new FileReader(FileName);
