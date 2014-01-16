@@ -3,7 +3,6 @@ package UnixTools;
 
 public class Tail {
         public String getLines(String fileContent , int count){
-
             String[] lines = fileContent.split("\n");
             StringBuilder sb = new StringBuilder();
             int startIndex = 0;
