@@ -8,7 +8,7 @@ import static junit.framework.Assert.assertEquals;
  */
 public class reduceSpaceTest {
     @Test
-    public void testTrimSpace() throws Exception {
+    public void testgetFormattedText() throws Exception {
         reduceSpace trim = new reduceSpace();
         String text = "abc     efg      lmn  qwe    u";
         String expectedText = "abc efg lmn qwe u";

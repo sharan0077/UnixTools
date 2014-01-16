@@ -9,14 +9,9 @@ public class Tail {
             int startIndex = 0;
             if(lines.length < count)
                 count = lines.length;
-            else
-                startIndex = lines.length - count;
-            for(int i = startIndex ; i <= count ; i++){
-                if(i != lines.length){
-                    sb.append(lines[i]);
-                    sb.append('\n');
-                }
-            }
+            startIndex = lines.length - count;
+            for(int i = startIndex ; i < lines.length ; i++)
+                sb.append(lines[i]).append('\n');
             return sb.toString();
         }
 }
