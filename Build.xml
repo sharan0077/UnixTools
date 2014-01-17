@@ -1,0 +1,30 @@
+<project name ="unix-tools" default="run">
+    <path id="unix.classpath">
+        <fileset dir=".">
+            <include name="junit-4.10.jar" />
+        </fileset>
+    </path>
+    <target name = "createDest" depends="removeDest">
+        <mkdir dir ="build"></mkdir>
+        <mkdir dir ="build/classes"></mkdir>
+        <mkdir dir ="build/classes/tests"></mkdir>
+        <mkdir dir ="build/jar"></mkdir>
+    </target>
+    <target name="compile" depends ="createDest">
+        <javac srcdir ="tests" destdir ="build/classes/tests"></javac>
+        <javac srcdir ="src" destdir ="build/classes"></javac>
+    </target>
+    <target name="removeDest">
+        <delete dir="build"></delete>
+    </target>
+    <target name="jar" depends="compile">
+        <jar destfile="build/jar/app.jar" basedir="build/classes">
+            <manifest>
+                <attribute name="Main-Class" value="Client.Options"/>
+            </manifest>
+        </jar>
+    </target>
+    <target name="run" depends="jar">
+        <java jar ="build/jar/app.jar" fork="true"></java>
+    </target>
+</project>
